@@ -1,0 +1,36 @@
+@import url('./Assets/Fonts/fonts.css');
+
+:root {
+    --text: #E8E8E2;
+    --background: #181818;
+}
+
+body {
+    background: var(--background);
+}
+
+/* ORDER OF PROPERTIES:
+
+1. Positioning:
+    top, bottom, left, right, position
+
+2. Sizing:
+    height, width
+
+3. Flexbox:
+    flex-direction, justify-content, align-items, display, gap
+
+4. Text:
+    color, font-size, font-family, line-height
+
+5. Border:
+    border-radius
+
+6. Background:
+    background
+
+7. Pseudo-elements:
+    ::before, ::after
+
+8. Nested elements
+*/

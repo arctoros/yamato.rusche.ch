@@ -1,0 +1,217 @@
+@import url('./Assets/Fonts/fonts.css');
+
+:root {
+    --text: #181818;
+    --base: #ECE6E6;
+    --title_picture_width: 30vw;
+    --navwidth: 35vw;
+    --headersize: calc(12px + 1vw);
+    --textsize: calc(7px + 0.8vw);
+}
+
+html {
+    scroll-behavior: smooth;
+    cursor: none;
+    overflow-x: none;
+}
+
+body {
+    background: var(--base);
+}
+
+#cursor {
+    top: calc(100vh / 2 - 10px);
+    left: calc(100vw / 2 - 10px);
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--base);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    filter: blur(2px);
+}
+
+#scrollArrow {
+    top: calc(-1 * (2000px - 80vh)); 
+    left: 18vw;
+    position: fixed;
+}
+
+#scrollArrow.scrolling {
+    top: calc(198vh - 2138px);
+    position: absolute;
+}
+
+.scroll.text {
+    top: 69vh; 
+    left: 21vw; 
+    position: absolute; 
+    color: var(--text);
+    font-size: calc(10px + 2vw);
+    font-family: "regular";
+    line-height: calc(25px + 1vw);
+}
+
+#logo {
+    top: 28vh; 
+    left: calc(12vw - 20px); 
+    position: absolute;
+    color: var(--text); 
+    font-size: calc(40px + 4vw);
+    font-family: "logo";
+}
+
+.title.header {
+    top: 28vh; 
+    left: 20vw; 
+    position: absolute; 
+    color: var(--text);
+    font-size: calc(40px + 4vw);
+    font-family: "extrabold";
+    line-height: calc(60px + 4vw);
+}
+
+.title.subheader {
+    top: 40vh; 
+    left: 21vw; 
+    position: absolute; 
+    color: var(--text);
+    font-size: calc(10px + 2vw);
+    font-family: "regular";
+    line-height: calc(25px + 1vw);
+}
+
+.title_picture {
+    width: var(--title_picture_width);
+    height: calc(var(--title_picture_width) / 2 * 3);
+    top: calc((100vh - var(--title_picture_width) / 2 * 3) / 2);
+    left: 60vw;
+    position: absolute;
+    border-radius: 20px;
+    background: black;
+}
+
+.nav.arrow {
+    top: calc((50vh - var(--title_picture_width) / 4 * 3 - 3vw) / 2);
+    right: 0px;
+    position: absolute;
+    height: 6vh;
+    width: 6vw;
+    transition: transform 1s ease-in-out, left 1s ease-in-out;
+    transform: translateX(0) rotate(0deg);
+}
+
+.nav.arrow.active {
+    transform: translateX(-21vw) rotate(180deg);
+}
+
+.nav.container {
+    top: calc((100vh - var(--title_picture_width) / 2 * 3) / 2 + (7.5vw - 64px));
+    right: calc(-1 * var(--navwidth));
+    position: absolute;
+    width: var(--navwidth);
+    height: calc(var(--title_picture_width) / 2 * 3);
+    transition: right 1s ease-in-out;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    display: inline-flex;
+    gap: calc(7.755vw - 64px); 
+}
+
+.nav.background {
+    top: -20vh;
+    right: calc(-1 * var(--navwidth) + (100vw - var(--title_picture_width) - 60vw) / 2);
+    position: absolute;
+    width: var(--navwidth);
+    height: 140vh;
+    background: var(--base);
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
+    transition: right 1s ease-in-out;
+    -webkit-transition: right 1s ease-in-out;
+}
+
+.nav.subcontainer {
+    align-self: stretch; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    display: flex;
+}
+
+.nav.header {
+    color: var(--text); 
+    font-size: var(--headersize); 
+    font-family: extrabold; 
+}
+
+.nav.link {
+    color: var(--text); 
+    font-size: var(--textsize); 
+    font-family: regular;
+    text-decoration: none;
+    cursor: none;
+    left: 0.4vw;
+    position: relative;
+}
+
+.nav.text.about {
+    width: calc(var(--navwidth) - 16vw); 
+    color: var(--text); 
+    font-size: var(--textsize);
+    font-family: regular;
+    word-wrap: break-word;
+    position: relative;
+    left: 0.4vw;
+}
+
+.nav.about.contact {
+    position: relative;
+    top: 0.4vw;
+}
+
+.nav.header.about.contact {
+    font-size: var(--textsize);
+    left: 0.4vw;
+}
+
+.nav.links.about.contact {
+    position: relative;
+    top: calc(1.815vh - 18.224px);
+    left: 0vw;
+    height: 3.2vh;
+}
+
+.nav.email {
+    width: 10vw;
+}
+
+.nav.linkedin {
+    position: relative;
+    left: 1vw;
+    top: 5px;
+}
+
+.nav.github {
+    position: relative;
+    top: 2px;
+}
+
+.album.container {
+    position: absolute;
+    top: 200vh;
+    width: 84vw;
+    left: 16vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 100vh;
+}
+
+.album.title {
+    font-size: calc(30px + 3vw);
+    font-family: "extrabold";
+    word-wrap: normal;
+}
