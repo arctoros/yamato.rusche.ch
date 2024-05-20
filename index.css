@@ -12,7 +12,6 @@
 html {
     scroll-behavior: smooth;
     cursor: none;
-    overflow-x: none;
 }
 
 body {
@@ -32,19 +31,21 @@ body {
     filter: blur(2px);
 }
 
-#scrollArrow {
-    top: calc(-1 * (2000px - 80vh)); 
+.scroll.arrow {
     left: 18vw;
-    position: fixed;
 }
 
-#scrollArrow.scrolling {
-    top: calc(198vh - 2138px);
+.scroll.arrow.fixed {
     position: absolute;
+    display: none;
+}
+
+.scroll.arrow.scrolling {
+    position: fixed;
+    display: block;
 }
 
 .scroll.text {
-    top: 69vh; 
     left: 21vw; 
     position: absolute; 
     color: var(--text);
@@ -53,8 +54,7 @@ body {
     line-height: calc(25px + 1vw);
 }
 
-#logo {
-    top: 28vh; 
+.logo {
     left: calc(12vw - 20px); 
     position: absolute;
     color: var(--text); 
@@ -63,7 +63,6 @@ body {
 }
 
 .title.header {
-    top: 28vh; 
     left: 20vw; 
     position: absolute; 
     color: var(--text);
@@ -73,7 +72,6 @@ body {
 }
 
 .title.subheader {
-    top: 40vh; 
     left: 21vw; 
     position: absolute; 
     color: var(--text);
@@ -82,55 +80,50 @@ body {
     line-height: calc(25px + 1vw);
 }
 
-.title_picture {
+.title.picture {
     width: var(--title_picture_width);
     height: calc(var(--title_picture_width) / 2 * 3);
-    top: calc((100vh - var(--title_picture_width) / 2 * 3) / 2);
     left: 60vw;
     position: absolute;
     border-radius: 20px;
-    background: black;
+    background: var(--base);
 }
 
 .nav.arrow {
-    top: calc((50vh - var(--title_picture_width) / 4 * 3 - 3vw) / 2);
+    top: 64px;
     right: 0px;
     position: absolute;
-    height: 6vh;
+    height: 3vw;
     width: 6vw;
     transition: transform 1s ease-in-out, left 1s ease-in-out;
     transform: translateX(0) rotate(0deg);
 }
 
-.nav.arrow.active {
-    transform: translateX(-21vw) rotate(180deg);
+.nav.background {
+    top: -20vh;
+    right: 0vw;
+    position: absolute;
+    height: 140vh;
+    width: 0vw;
+    transition: width 1s ease-in-out;
+    background: var(--base);
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
+    -webkit-transition: width 1s ease-in-out;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
 }
 
 .nav.container {
-    top: calc((100vh - var(--title_picture_width) / 2 * 3) / 2 + (7.5vw - 64px));
-    right: calc(-1 * var(--navwidth));
+    overflow: hidden;
+    right: 0vw;
     position: absolute;
-    width: var(--navwidth);
-    height: calc(var(--title_picture_width) / 2 * 3);
-    transition: right 1s ease-in-out;
+    width: 0vw;
+    transition: width 1s ease-in-out;
     flex-direction: column; 
     justify-content: flex-start; 
     align-items: flex-start; 
     display: inline-flex;
-    gap: calc(7.755vw - 64px); 
-}
-
-.nav.background {
-    top: -20vh;
-    right: calc(-1 * var(--navwidth) + (100vw - var(--title_picture_width) - 60vw) / 2);
-    position: absolute;
-    width: var(--navwidth);
-    height: 140vh;
-    background: var(--base);
-    filter: blur(40px);
-    -webkit-filter: blur(40px);
-    transition: right 1s ease-in-out;
-    -webkit-transition: right 1s ease-in-out;
 }
 
 .nav.subcontainer {
@@ -139,6 +132,16 @@ body {
     justify-content: flex-start; 
     align-items: flex-start; 
     display: flex;
+}
+
+.nav.subcontainer.photography {
+    position: absolute;
+    top: calc(15.06vw + 4.79px);
+}
+
+.nav.subcontainer.other {
+    position: absolute;
+    bottom: 0px;
 }
 
 .nav.header {
@@ -182,10 +185,12 @@ body {
     top: calc(1.815vh - 18.224px);
     left: 0vw;
     height: 3.2vh;
+    white-space: nowrap;
 }
 
 .nav.email {
     width: 10vw;
+    line-height: 10px;
 }
 
 .nav.linkedin {
@@ -197,6 +202,7 @@ body {
 .nav.github {
     position: relative;
     top: 2px;
+    margin-left: 2vw;
 }
 
 .album.container {
@@ -214,4 +220,10 @@ body {
     font-size: calc(30px + 3vw);
     font-family: "extrabold";
     word-wrap: normal;
+}
+
+.album.image {
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
 }
