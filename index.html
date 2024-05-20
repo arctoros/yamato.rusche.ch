@@ -3,6 +3,7 @@
   <head>
     <title>Yamato Rusche</title>
     <meta charset="UTF-8">
+    <meta content="device-height, user-scalable=no" >
     <link rel="stylesheet" href="./index.css">
     <link rel="icon" sizes="32x32" href="favicon-32.png" type="image/png">
     <link rel="icon" sizes="196x196" href="favicon-192.png" type="image/png">    
@@ -11,13 +12,15 @@
   <body>
     <div id="home">
       <div class="scroll">
-        <img src="./Assets/Icons/scroll_arrow.svg" id="scrollArrow">
+        <img src="./Assets/Icons/scroll_arrow.svg" class="scroll arrow fixed">
+        <img src="./Assets/Icons/scroll_arrow.svg" class="scroll arrow scrolling">
         <div class="scroll text">scroll down<br>for my photography</div>
       </div>
 
-      <img class="title title_picture" src="./Assets/Images/IceCreamStand.webp"/>
-      <div id="logo">YR</div>
+      <img class="title picture" src="./Assets/Images/IceCreamStand.webp"/>
+      <div class="logo">YR</div>
       <div class="title header">Welcome!</div>
+
       <div class="title subheader">to my website</div>
       <div class="nav background"></div>
 
@@ -28,9 +31,9 @@
           <div class="nav about contact">
             <div class="nav header about contact">CONTACT</div>
             <div class="nav links about contact">
-              <a href="mailto:yamato@rusche.ch" class="nav link email" style="line-height: calc(10px);">yamato@rusche.ch</a>
+              <a href="mailto:yamato@rusche.ch" class="nav link email">yamato@rusche.ch</a>
               <a href="https://www.linkedin.com/in/yamato-rusche"><img src="./Assets/Icons/LinkedIn.svg" class="nav linkedin"></a>
-              <a href="https://github.com/Yamato36"><img src="./Assets/Icons/GitHub.svg" class="nav github" width="19px" height="19px"style="margin-left: 2vw;"></a>
+              <a href="https://github.com/Yamato36"><img src="./Assets/Icons/GitHub.svg" class="nav github" width="19px" height="19px"></a>
             </div>
           </div>
         </div>
@@ -38,12 +41,12 @@
         <div class="nav subcontainer photography">
           <div class="nav header photography">PHOTOGRAPHY</div>
           <div class="nav links photography ">
-            <div class="nav link photography 1">Album 1</div>
-            <div class="nav link photography 2">Album 2</div>
-            <div class="nav link photography 3">Album 3</div>
-            <div class="nav link photography 4">Album 4</div>
-            <div class="nav link photography 5">Album 5</div>
-            <div class="nav link photography 6">Album 6</div>
+            <div class="nav link photography 1">Japan '24</div>
+            <div class="nav link photography 2">Zürich '24</div>
+            <div class="nav link photography 3">Baden '24</div>
+            <div class="nav link photography 4">Placeholder 1</div>
+            <div class="nav link photography 5">Placeholder 2</div>
+            <div class="nav link photography 6">Placeholder 3</div>
           </div>
         </div>
 
@@ -53,7 +56,7 @@
             <div><a href="./Other/Tetra.html" class="nav link other">Tetra</a></div>
             <div><a href="./Other/Pathfinder.html" class="nav link other">Pathfinder</a></div>
             <div><a href="./Other/Keyboard.html" class="nav link other">Keyboard</a></div>
-            <div><a href="./Other/Matura.html" class="nav link other">Temporary</a></div>
+            <div><a href="./Other/Matura.html" class="nav link other">Matura</a></div>
           </div>
         </div>
       </div>
@@ -62,18 +65,30 @@
       
       <div class="album container">
         <div class="album subcontainer 1">
-          <div class="album title">Album 1</div>
-          <!-- <img class="album image" id="image-1" loading="lazy" src="./Assets/Images/Album-1"> -->
+          <div class="album title">Japan '24</div>
+          <img class="album image 1" loading="lazy" src="./Assets/Images/PurpleChild.webp">
+          <img class="album image 2" loading="lazy" src="./Assets/Images/HeadlessChicken.webp">
+          <img class="album image 3" loading="lazy" src="./Assets/Images/Kendo.webp">
+          <img class="album image 4" loading="lazy" src="./Assets/Images/Ghosts.webp">
+          <img class="album image 5" loading="lazy" src="./Assets/Images/Fly.webp">
+          <img class="album image 6" loading="lazy" src="./Assets/Images/AllumeurDeRéverbères.webp">
+          <img class="album image 7" loading="lazy" src="./Assets/Images/Promenade.webp">
+          <img class="album image 8" loading="lazy" src="./Assets/Images/SecretSpectator.webp">
         </div>
 
         <div class="album subcontainer 2">
-          <div class="album title">Album 2</div>
-          <!-- <img class="album image" id="image-2" loading="lazy" src="./Assets/Images/Album-1"> -->
+          <div class="album title">Zürich '24</div>
+          <img class="album image 9" loading="lazy" src="./Assets/Images/NoShelter.webp">
+          <img class="album image 10" loading="lazy" src="./Assets/Images/Pause.webp">
+          <img class="album image 11" loading="lazy" src="./Assets/Images/IceCreamStand.webp">
         </div>
 
         <div class="album subcontainer 3">
-          <div class="album title">Album 3</div>
-          <!-- <img class="album image" id="image-3" loading="lazy" src="./Assets/Images/Album-1"> -->
+          <div class="album title">Baden '24</div>
+          <img class="album image 12" loading="lazy" src="./Assets/Images/PrimarySchool.webp">
+          <img class="album image 13" loading="lazy" src="./Assets/Images/Crow.webp">
+          <img class="album image 14" loading="lazy" src="./Assets/Images/Rain.webp">
+          <img class="album image 15" loading="lazy" src="./Assets/Images/ClothingStore.webp">
         </div>
       </div>
 
