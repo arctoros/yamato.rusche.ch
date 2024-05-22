@@ -1,92 +1,96 @@
 @import url('./Assets/Fonts/fonts.css');
 
+/*----------------------------------------GENERAL DEFINITIONS----------------------------------------*/
+
 :root {
-    --text: #181818;
     --base: #ECE6E6;
+    --text: #181818;
     --title_picture_width: 30vw;
     --navwidth: 35vw;
-    --headersize: calc(12px + 1vw);
-    --textsize: calc(7px + 0.8vw);
 }
 
 html {
-    scroll-behavior: smooth;
     cursor: none;
+    background: var(--base);
+    font-family: regular;
 }
 
-body {
-    background: var(--base);
+.header {
+    font-size: var(--headersize);
+    font-family: "extrabold";
 }
 
 #cursor {
     top: calc(100vh / 2 - 10px);
     left: calc(100vw / 2 - 10px);
     position: fixed;
-    width: 20px;
     height: 20px;
-    border-radius: 50%;
+    width: 20px;
     background: var(--base);
     mix-blend-mode: difference;
-    pointer-events: none;
     filter: blur(2px);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
-.scroll.arrow {
-    left: 18vw;
-}
+/*----------------------------------------TITLE CONTENT----------------------------------------*/
 
-.scroll.arrow.fixed {
+.title {
     position: absolute;
-    display: none;
-}
-
-.scroll.arrow.scrolling {
-    position: fixed;
-    display: block;
-}
-
-.scroll.text {
-    left: 21vw; 
-    position: absolute; 
-    color: var(--text);
-    font-size: calc(10px + 2vw);
-    font-family: "regular";
-    line-height: calc(25px + 1vw);
-}
-
-.logo {
-    left: calc(12vw - 20px); 
-    position: absolute;
-    color: var(--text); 
-    font-size: calc(40px + 4vw);
-    font-family: "logo";
 }
 
 .title.header {
     left: 20vw; 
-    position: absolute; 
-    color: var(--text);
-    font-size: calc(40px + 4vw);
-    font-family: "extrabold";
-    line-height: calc(60px + 4vw);
 }
 
 .title.subheader {
     left: 21vw; 
-    position: absolute; 
-    color: var(--text);
-    font-size: calc(10px + 2vw);
-    font-family: "regular";
-    line-height: calc(25px + 1vw);
+    font-size: var(--subheadersize);
 }
 
 .title.picture {
+    left: 60vw;
     width: var(--title_picture_width);
     height: calc(var(--title_picture_width) / 2 * 3);
-    left: 60vw;
-    position: absolute;
-    border-radius: 20px;
     background: var(--base);
+    border-radius: 20px;
+}
+
+.logo {
+    font-family: "logo";
+}
+
+.scroll.container {
+    width: 20vw;
+}
+
+.scroll.arrow {
+    left: 18vw;
+    position: sticky;
+}
+
+.scroll.text {
+    left: 21vw; 
+    width: 36vw;
+    font-size: var(--subheadersize);
+}
+
+/*----------------------------------------NAVIGATION----------------------------------------*/
+
+.nav.background {
+    top: -20vh;
+    right: 0vw;
+    position: absolute;
+    height: 140vh;
+    width: 0vw;
+    background: var(--base);
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
+    transition: width 1s ease-in-out;
+    -webkit-transition: width 1s ease-in-out;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
 }
 
 .nav.arrow {
@@ -99,131 +103,124 @@ body {
     transform: translateX(0) rotate(0deg);
 }
 
-.nav.background {
-    top: -20vh;
-    right: 0vw;
-    position: absolute;
-    height: 140vh;
-    width: 0vw;
-    transition: width 1s ease-in-out;
-    background: var(--base);
-    filter: blur(40px);
-    -webkit-filter: blur(40px);
-    -webkit-transition: width 1s ease-in-out;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-}
-
 .nav.container {
-    overflow: hidden;
     right: 0vw;
     position: absolute;
     width: 0vw;
     transition: width 1s ease-in-out;
-    flex-direction: column; 
-    justify-content: flex-start; 
     align-items: flex-start; 
     display: inline-flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    overflow: hidden;
 }
 
 .nav.subcontainer {
+    position: absolute;
+    align-items: flex-start; 
     align-self: stretch; 
+    display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
-    align-items: flex-start; 
-    display: flex;
-}
-
-.nav.subcontainer.photography {
-    position: absolute;
-    top: calc(15.06vw + 4.79px);
 }
 
 .nav.subcontainer.other {
-    position: absolute;
     bottom: 0px;
 }
 
-.nav.header {
-    color: var(--text); 
-    font-size: var(--headersize); 
-    font-family: extrabold; 
-}
-
-.nav.link {
-    color: var(--text); 
-    font-size: var(--textsize); 
-    font-family: regular;
-    text-decoration: none;
-    cursor: none;
-    left: 0.4vw;
-    position: relative;
-}
-
-.nav.text.about {
-    width: calc(var(--navwidth) - 16vw); 
-    color: var(--text); 
-    font-size: var(--textsize);
-    font-family: regular;
-    word-wrap: break-word;
-    position: relative;
-    left: 0.4vw;
-}
-
 .nav.about.contact {
-    position: relative;
     top: 0.4vw;
+    position: relative;
 }
 
 .nav.header.about.contact {
-    font-size: var(--textsize);
     left: 0.4vw;
+    font-size: var(--textsize);
 }
 
 .nav.links.about.contact {
-    position: relative;
-    top: calc(1.815vh - 18.224px);
     left: 0vw;
-    height: 3.2vh;
+    position: relative;
+    height: 1.83vw;
     white-space: nowrap;
+}
+
+.nav.header {
+    font-size: var(--navheadersize); 
+}
+
+.nav.link {
+    left: 0.4vw;
+    position: relative;
+    color: var(--text);
+    font-size: var(--textsize); 
+    text-decoration: none;
+    cursor: none;
+}
+
+.nav.text.about {
+    left: 0.4vw;
+    position: relative;
+    width: calc(var(--navwidth) - 16vw); 
+    font-size: var(--textsize);
+    word-wrap: break-word;
 }
 
 .nav.email {
     width: 10vw;
-    line-height: 10px;
 }
 
 .nav.linkedin {
-    position: relative;
-    left: 1vw;
     top: 5px;
+    left: 1vw;
+    position: relative;
 }
 
 .nav.github {
-    position: relative;
     top: 2px;
+    position: relative;
     margin-left: 2vw;
 }
 
+/*----------------------------------------ALBUMS----------------------------------------*/
+
 .album.container {
-    position: absolute;
-    top: 200vh;
-    width: 84vw;
     left: 16vw;
+    position: absolute;
+    width: 68vw;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    gap: 100vh;
+    flex-wrap: wrap;
+    gap: 12vw;
 }
 
-.album.title {
-    font-size: calc(30px + 3vw);
-    font-family: "extrabold";
+.album.subcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6.4vw;
+}
+
+.album.header {
+    width: 100%;
+    font-size: var(--albumheadersize);
     word-wrap: normal;
 }
 
 .album.image {
-    width: 80%;
     height: auto;
+    width: 100%;
     border-radius: 20px;
+}
+
+.album.image.portrait {
+    height: auto;
+    width: 30.8vw;
+}
+
+.album.image.floater {
+    position: sticky;
+}
+
+.album.image.portrait.offset {
+    margin-left: 37.2vw;
 }
