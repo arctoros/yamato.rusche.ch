@@ -1,4 +1,12 @@
-function calculate(q, r, type, classes, number, property) {
+var album_links = document.getElementsByClassName("nav link photography");
+var cursor = document.getElementById("cursor");
+var navArrow = document.getElementsByClassName("nav arrow")[0];
+var container = document.getElementsByClassName("nav container")[0];
+var background = document.getElementsByClassName("nav background")[0];
+var open = false;
+
+function calculate(q, r, classes, property, name) {
+    var elements = document.getElementsByClassName(classes);
     var s = 14.7;
     var t = 25.04;
     var sign = null;
@@ -8,55 +16,51 @@ function calculate(q, r, type, classes, number, property) {
     v = v.toFixed(3);
     p = p.toFixed(3);
 
-    if (type == "css") {
-        var elements = document.getElementsByClassName(classes);
+    if (p < 0) {
+        p = -p;
+        sign = "- ";
+    } 
+    
+    else {
+        sign = "+ ";
+    }
 
-        if (p < 0) {
-            p = -p;
-            sign = "- ";
-        } else {
-            sign = "+ ";
-        }
-
-        if (number == null) {
-            number = elements.length;
-        }
-
-        for (var i = 0; i < number; i++) {
+    if (!name) {
+        for (var i = 0; i < elements.length; i++) {
             elements[i].style[property] = "calc(" + v + "vw " + sign + p + "px)";
         }
     } 
     
-    else if (type == "n") {
-        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        var result = v * w / 100 + parseInt(p);
-        return result;
+    else if (classes == "root") {
+        
+
+        document.querySelector(":root").style.setProperty(name, "calc(" + v + "vw " + sign + p + "px)");
     }
 }
 
-window.addEventListener('scroll', function() {
-    var scrollArrowFixed = document.getElementsByClassName('scroll arrow fixed')[0];
-    var scrollArrowScrolling = document.getElementsByClassName('scroll arrow scrolling')[0];
-    var threshold = calculate(848, 1434, "n");
-  
-    if (window.scrollY >= threshold) {
-        scrollArrowFixed.style.display = "block";
-        scrollArrowScrolling.style.display = "none";
-    } else {
-        scrollArrowFixed.style.display = "none";
-        scrollArrowScrolling.style.display = "block";
-    }
-  });
+calculate(100, 140, "root", "setProperty", "--headersize");
+calculate(39, 60, "root", "setProperty", "--subheadersize");
+calculate(27, 37, "root", "setProperty", "--navheadersize");
+calculate(74, 105, "root", "setProperty", "--albumheadersize");
+calculate(19, 27, "root", "setProperty", "--textsize");
 
-var album_links = document.getElementsByClassName("nav link photography");
-
-for (var i = 0; i < album_links.length; i++) {
-    album_links[i].addEventListener("click", function() {
-        document.getElementsByClassName("album subcontainer " + this.classList[3])[0].scrollIntoView();
-    });
-};
-
-var cursor = document.getElementById("cursor");
+calculate(11010, 18320, "desktop", "height");
+calculate(225, 360, "title header", "top");
+calculate(336, 534, "title subheader", "top");
+calculate(89, 103, "title picture", "top");
+calculate(235, 374, "logo", "top");
+calculate(156, 280, "logo", "left");
+calculate(-1330, -940, "scroll container", "top");
+calculate(3000, 3500, "scroll container", "height");
+calculate(-1330, -940, "scroll arrow", "top");
+calculate(579, 921, "scroll text", "top");
+calculate(40, 60, "scroll text", "line-height");
+calculate(120, 153, "nav container", "top");
+calculate(603, 1027, "nav container", "height");
+calculate(-3, 6, "nav links about contact photography", "top");
+calculate(226, 382, "nav subcontainer photography", "top");
+calculate(1700, 2600, "album container", "top");
+calculate(59, 44, "floater", "top");
 
 document.addEventListener("mousemove", function(event) {
     var x = event.clientX;
@@ -64,11 +68,6 @@ document.addEventListener("mousemove", function(event) {
     cursor.style.left = x - 10 + "px";
     cursor.style.top = y - 10 + "px";
 });
-
-var navArrow = document.getElementsByClassName("nav arrow")[0];
-var container = document.getElementsByClassName("nav container")[0];
-var background = document.getElementsByClassName("nav background")[0];
-var open = false;
 
 navArrow.addEventListener("click", function() {
     if (open) {
@@ -84,14 +83,8 @@ navArrow.addEventListener("click", function() {
     }
 });
 
-// RESPOSIVENESS
-
-calculate(-1330, -940, "css", "scroll arrow scrolling", null, "top");
-calculate(-484, 492, "css", "scroll arrow fixed", null, "top");
-calculate(579, 921, "css", "scroll text", null, "top");
-calculate(235, 374, "css", "logo", null, "top");
-calculate(235, 374, "css", "title header", null, "top");
-calculate(336, 534, "css", "title subheader", null, "top");
-calculate(89, 103, "css", "title picture", null, "top");
-calculate(120, 153, "css", "nav container", null, "top");
-calculate(603, 1027, "css", "nav container", null, "height");
+for (var i = 0; i < album_links.length; i++) {
+    album_links[i].addEventListener("click", function() {
+    document.getElementsByClassName("album subcontainer " + this.classList[3])[0].scrollIntoView();    
+    });
+};
