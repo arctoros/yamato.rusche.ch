@@ -1,25 +1,32 @@
+<!-- TODO:
+      3. Redo Favicons
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Yamato Rusche</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" media="all" href="./style.css">
     <link rel="icon" sizes="32x32" href="favicon-32.png" type="image/png">
-    <link rel="icon" sizes="196x196" href="favicon-192.png" type="image/png">    
+    <link rel="icon" sizes="196x196" href="favicon-192.png" type="image/png">
   </head>
 
-  <body class="desktop">
-    <div class="title header">Welcome!</div>
-    <div class="title subheader">to my website</div>
-    <div class="title header logo">YR</div>
-    <img class="title picture" src="./Assets/Images/IceCreamStand.webp"/>
-    <div class="title scroll">
-      <div class="title scroll container">
+  <body>
+    <div class="title container">
+      <img class="title picture" src="./Assets/Images/IceCreamStand.webp"/>
+      <div class="title header">Welcome</div>
+      <div class="title subheader">to my personal website</div>
+      <div class="title header logo">YR</div>
+    </div>
+    <div class="scroll container">
         <img src="./Assets/Icons/scroll_arrow.svg" class="scroll arrow">
       </div>
-      <div class="title scroll text">scroll down<br>for my photography</div>
-    </div>
-
+      <div class="scroll text_desktop">scroll down<br>for my photography</div>
+      <div class="scroll text_container">
+        <div class="scroll text_mobile">scroll down for my</div>
+        <div class="scroll text_mobile newLine">photography</div>
+      </div>
     <div class="nav background"></div>
 
     <div class="nav container">
@@ -31,7 +38,7 @@
           <div class="nav links about contact">
             <a href="mailto:yamato@rusche.ch" class="nav link email">yamato@rusche.ch</a>
             <a href="https://www.linkedin.com/in/yamato-rusche"><img src="./Assets/Icons/LinkedIn.svg" class="nav linkedin"></a>
-            <a href="https://github.com/Yamato36"><img src="./Assets/Icons/GitHub.svg" class="nav github" width="19px" height="19px"></a>
+            <a href="https://github.com/Yamato36"><img src="./Assets/Icons/GitHub.svg" class="nav github"></a>
           </div>
         </div>
       </div>
@@ -48,15 +55,15 @@
       <div class="nav subcontainer other">
         <div class="nav header other">OTHER</div>
         <div class="nav links other">
-          <div><a href="./Other/Tetra.html" class="nav link other">Tetra</a></div>
-          <div><a href="./Other/Pathfinder.html" class="nav link other">Pathfinder</a></div>
-          <div><a href="./Other/Keyboard.html" class="nav link other">Keyboard</a></div>
-          <div><a href="./Other/Matura.html" class="nav link other">Matura</a></div>
+          <div><a href="./tetra/" class="nav link other">Tetra</a></div>
+          <div><a href="./pathfinder/" class="nav link other">Pathfinder</a></div>
+          <div><a href="./keyboard/" class="nav link other">Keyboard</a></div>
+          <!-- <div><a href="./other/" class="nav link other">Matura</a></div> -->
         </div>
       </div>
     </div>
 
-    <img class="nav arrow" src="./Assets/Icons/chevron-left.svg"></img>
+    <img class="nav arrow" src="./Assets/Icons/chevron.svg"></img>
     
     <div class="album container">
       <div class="album subcontainer japan24">
@@ -66,7 +73,7 @@
         <img class="album image portrait" loading="lazy" src="./Assets/Images/SecretSpectator.webp">
         <img class="album image" loading="lazy" src="./Assets/Images/HeadlessChicken.webp">
         
-        <div class="album subcontainer floater">
+        <div class="album subcontainer_floater">
           <img class="album image portrait" loading="lazy" src="./Assets/Images/Kendo.webp">
           <img class="album image portrait floater" loading="lazy" src="./Assets/Images/AllumeurDeRéverbères.webp">
           <img class="album image portrait" loading="lazy" src="./Assets/Images/Ghosts.webp">
@@ -77,7 +84,7 @@
 
       <div class="album subcontainer zürich24">
         <div class="album header">Zürich '24</div>
-        <div class="album subcontainer floater">
+        <div class="album subcontainer_floater">
           <img class="album image portrait floater" loading="lazy" src="./Assets/Images/IceCreamStand.webp">
           <img class="album image portrait" loading="lazy" src="./Assets/Images/NoShelter.webp">
           <img class="album image portrait offset" loading="lazy" src="./Assets/Images/Pause.webp">
@@ -91,6 +98,8 @@
         <img class="album image portrait" loading="lazy" src="./Assets/Images/ClothingStore.webp">
         <img class="album image" loading="lazy" src="./Assets/Images/Rain.webp">
       </div>
+
+      <div class="licence">Licenced under CC BY-NC-SA 4.0</div>
     </div>
 
     <div id="cursor"></div>
