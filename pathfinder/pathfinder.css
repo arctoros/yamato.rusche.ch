@@ -1,0 +1,49 @@
+@import url('../Assets/Fonts/fonts.css');
+
+:root {
+    --dark: rgb(42, 42, 42);
+    --gray: rgb(160, 160, 160);
+    --light: rgb(69, 69, 69);
+}
+
+* {
+    color: var(--gray);
+    font-family: "Supreme";
+    font-size: 1vw;
+}
+
+body {  
+    background-color: var(--dark);
+    display: flex;
+}
+
+.button {
+    background-color: var(--dark);
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 8px;
+
+    &:hover {
+        background-color: var(--light);
+    }
+}
+
+.green {
+    background-color: rgb(87, 170, 68);
+}
+
+#canvas {
+    border: 2px solid var(--gray);
+    display: flex;
+    flex-wrap: wrap;
+    height: 48vw;
+    width:  48vw;
+    margin-left: 12vw;
+    margin-top: 2.5vh;
+}
+
+#canvas div {
+    border: 1px solid var(--gray);
+    box-sizing:border-box;
+}

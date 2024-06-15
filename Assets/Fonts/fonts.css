@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Supreme';
+  src: url('./Supreme-Variable.woff2') format('woff2'),
+       url('./Supreme-Variable.woff') format('woff'),
+       url('./Supreme-Variable.ttf') format('truetype');
+       font-weight: 100 800;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+    font-family: 'logo';
+    src: url('./Styro-Extrabold.woff2') format('woff2'),
+         url('./Styro-Extrabold.woff') format('woff'),
+         url('./Styro-Extrabold.ttf') format('truetype');
+         font-weight: 800;
+         font-display: swap;
+         font-style: normal;
+}
