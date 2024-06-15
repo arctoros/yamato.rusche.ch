@@ -1,1 +1,249 @@
+@import url('./Assets/Fonts/fonts.css');
 
+@media (pointer:fine) {
+    #cursor {
+        top: -10vh;
+        position: fixed;
+        height: 20px;
+        width: 20px;
+        background: var(--base);
+        mix-blend-mode: difference;
+        filter: blur(2px);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+}
+
+@media (pointer:none), (pointer:coarse) {
+    #cursor {
+        display: none;
+    }
+}
+
+@media (min-aspect-ratio: 1/1) {
+    :root {
+        --text: #181818;
+        --base: #E6E6EC;
+    }
+
+    .horizontal {
+        display: block;
+    }
+
+    .vertical {
+        display: none;
+    }
+
+    body {
+        background: var(--background);
+    }
+
+    html {
+        cursor: none;
+        background: var(--base);
+        color: var(--text);
+        font-size: var(--textsize);
+        font-weight: 400;
+        font-family: "Supreme";
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: none;
+        cursor: none;
+    }
+
+    /*                            TITLE                            */
+    /*/////////////////////////////////////////////////////////////*/
+
+    .header {
+        left: 20vw;
+        font-size: var(--headersize);
+        font-weight: 800;
+        position: absolute;
+    }
+
+    .logo {
+        font-family: "logo";
+        position: absolute;
+    }
+
+    .other.arrow {
+        position: absolute;
+        height: 4vw;
+        width: 8vw;
+    }
+
+    /*                           CONTENT                           */
+    /*/////////////////////////////////////////////////////////////*/
+
+    .other.content.container {
+        width: 80vw; 
+        position: absolute;
+        justify-content: flex-start; 
+        align-items: center; 
+        display: inline-flex
+    }
+
+    .other.content.subcontainer {
+        gap: 48px; 
+        align-items: center; 
+        align-self: stretch; 
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .other.content.text {
+        word-wrap: break-word"
+    }
+
+    .other.content.picture {
+        top: 0px;
+        background: var(--base); 
+        color: var(--text);
+        border-radius: 20px
+    }
+
+    .other.file.container {
+        position: absolute
+    }
+
+    .other.file.links {
+        width: 100%; 
+        position: relative
+    }
+
+    .other.file.svg {
+        width: 3.2vw; 
+        height: 3.2vw; 
+        color: var(--text); 
+        position: absolute
+    }
+
+    .other.file.text {
+        font-size: var(--textsize);
+        position: absolute;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    :root {
+        --text: #181818;
+        --base: #E6E6EC;
+
+        --headersize: 12vw;
+        --subheadersize: 6.3vw;
+        --navheadersize: 4.2vw;
+        --albumheadersize: 8.7vw;
+        --textsize: 4.2vw;
+    }
+
+    .horizontal {
+        display: none;
+    }
+
+    .vertical {
+        display: block;
+    }
+
+    body {
+        background: var(--background);
+    }
+
+    html {
+        cursor: none;
+        background: var(--base);
+        color: var(--text);
+        font-size: var(--textsize);
+        font-weight: 400;
+        font-family: "Supreme";
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: none;
+        cursor: none;
+    }
+
+    /*                           CONTENT                           */
+    /*/////////////////////////////////////////////////////////////*/
+    .other.supercontainer.vertical {
+        left: 10vw;
+        width: 80vw; 
+        position: absolute;
+        justify-content: center; 
+        display: inline-flex;
+        flex-direction: column; 
+        gap: 48px;
+    }
+
+    .other.title {
+        height: 8vh;
+        justify-content: flex-start; 
+        display: inline-flex;
+    }
+
+    .header {
+        font-size: var(--headersize);
+        font-weight: 800;
+    }
+
+    .other.arrow {
+        top: 4vh;
+        right: -6vw;
+        position: absolute;
+        height: 8vw;
+        width: 16vw;
+    }
+
+    .other.content.subcontainer {
+        gap: 48px; 
+        align-items: center; 
+        align-self: stretch; 
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .other.content.text {
+        word-wrap: break-word"
+    }
+
+    .other.keyboard.content.text{
+        padding-bottom: 8vh;
+    }
+
+    .other.content.picture {
+        width: 100%;
+        background: var(--base); 
+        color: var(--text);
+        border-radius: 20px
+    }
+
+    .other.file.links {
+        width: 100%; 
+        justify-content: flex-start; 
+        display: inline-flex;
+    }
+
+    .other.file.container {
+        padding-bottom: 8vh;
+    }
+
+    .other.file.svg {
+        right: 16vw;
+        width: 6vw; 
+        height: 6vw; 
+        color: var(--text); 
+        position: absolute;
+    }
+
+    .other.pathfinder.file.svg {
+        right: 26vw;
+    }
+
+    .other.file.text {
+        font-size: var(--textsize);
+        right: 0vw;
+        position: absolute;
+    }
+}
